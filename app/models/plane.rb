@@ -12,8 +12,6 @@
 
 class Plane < ActiveRecord::Base
 attr_accessible :name,:rows,:cols
-validates :name, :presence => true
-validates :rows, :presence => true
-validates :cols, :presence => true
+validates :name, :rows, :cols, :presence => true
 has_many :flights, :inverse_of => :plane
 end
