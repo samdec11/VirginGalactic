@@ -1,0 +1,9 @@
+.row
+  .large-3.columns
+    =form_tag '/login', :remote => true do
+      = label_tag :email
+      = text_field_tag :email
+      = label_tag :password
+      = password_field_tag :password
+      = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius alert')
+      = submit_tag 'Fly away!'
