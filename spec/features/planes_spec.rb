@@ -6,6 +6,10 @@ describe 'Planes' do
   describe '/plane' do
     it 'has a create plane button', js:true do
       login_admin
+      visit planes_path
+      visit planes_path
+      visit planes_path
+      visit planes_path
       page.should have_link('Create Plane')
     end
     it 'on click of create plane form shows GET /new' , js:true do

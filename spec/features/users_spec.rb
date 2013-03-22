@@ -27,14 +27,14 @@ describe 'Users' do
     it 'creates a new user', :js => true do
       visit root_path
       click_link("Create Account")
-      fill_in('Name', :with => 'Bob')
+      fill_in('Name', :with => 'bob')
       fill_in('Email', :with => 'bob@gmail.com')
       fill_in('user_password', :with => 'a')
       fill_in('user_password_confirmation', :with => 'a')
       click_button('Create User')
       page.should_not have_button('Cancel')
       page.should_not have_button('Create User')
-      expect(User.first.name).to eq 'Bob'
+      expect(User.first.name).to eq 'bob'
     end
   end
 end
