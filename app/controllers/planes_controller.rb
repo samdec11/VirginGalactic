@@ -10,7 +10,10 @@ class PlanesController < ApplicationController
     @plane = Plane.new
   end
   def create
-    @plane = Plane.create(params[:plane])
+     p1 = Plane.new(params[:plane])
+     if p1.save
+        @plane = p1
+     end
   end
   def show
     @plane = Plane.find(params[:id])

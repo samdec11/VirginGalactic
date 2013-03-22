@@ -33,11 +33,10 @@ describe 'Planes' do
       page.should_not have_button('Create Plane')
       page.should_not have_link('Cancel')
       #expecting the create!
-      expect(Plane.first.name).to eq pl.name
+      expect(Plane.last.name).to eq pl.name
     end
     it 'does not save a plane with missing name,row,col',js:true do
       login_admin
-      Plane.create(name:"Baby Plane",rows:2,cols:4)
       click_link('Create Plane')
       pl = Plane.new(name:"Baby Plane",rows:2,cols:4)
       fill_in('plane_name', :with => pl.name)
