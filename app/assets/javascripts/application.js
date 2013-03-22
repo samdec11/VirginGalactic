@@ -6,3 +6,4 @@
 //= require 'foundation/js/foundation.min.js'
 //= require 'underscore-min'
 //= require 'home'
+//= require 'plane.js'
