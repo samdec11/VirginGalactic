@@ -1,2 +1,6 @@
 = link_to('Create Plane', new_plane_path, :remote =>true, :id => 'create_plane', :class => 'button radius secondary')
 #form
+.row
+  .columns.large-12
+    #planestuff
+      =render :partial => 'showplane'
