@@ -5,3 +5,6 @@ Seat.delete_all
 
 u1 = User.create(name: 'Bob', email: 'bob@gmail.com', password: 'a', password_confirmation: 'a')
 u2 = User.create(name: 'Admin', email: 'admin@gmail.com', password: 'a', password_confirmation: 'a', is_admin: true)
+
+s1 = Seat.create(row: 4, col: 20)
+
