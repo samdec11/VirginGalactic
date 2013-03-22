@@ -3,4 +3,5 @@
   = link_to('Login', '/login', :remote => true)
 - else
   = link_to('Planes', planes_path) if @auth.is_admin
+  = link_to('Flights', flights_path) if @auth.is_admin
   = link_to('Logout', '/login', :remote => true, :method => :delete)

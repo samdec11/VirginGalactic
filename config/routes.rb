@@ -7,5 +7,5 @@ Virgingalactic::Application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
-  resources :planes
+  resources :planes, :flights
 end
