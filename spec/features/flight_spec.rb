@@ -13,7 +13,8 @@ describe '/plane' do
         click_link('Create Plane')
         page.should have_button('Create Plane')
         page.should have_link('Cancel')
-        page.should_not have_link('Create Plane')
+        page.should_not('Create Plane')
+        expect(find_link('Create Plane').visible?).to eq false
       end
     end
 
