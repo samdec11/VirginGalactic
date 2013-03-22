@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 
-describe 'flight features' do
+describe 'Planes' do
 
   describe '/plane' do
     it 'has a create plane button', js:true do

@@ -1,0 +1,11 @@
+-if @plane.nil?
+  %h3 Please Select A Plane
+-else
+  .row
+    .columns.large-12
+      =@plane.name
+      .plane
+        -@plane.rows.times do |r|
+          .prow.inline
+            -@plane.cols.times do |c|
+              .seat= "#{r},#{c}"

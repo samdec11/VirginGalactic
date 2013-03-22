@@ -1,0 +1,5 @@
+- if @auth.nil?
+  = link_to('Create Account', new_user_path, :remote => true)
+  = link_to('Login', '/login', :remote => true)
+- else
+  = link_to('Logout', '/login', :remote => true, :method => :delete)
