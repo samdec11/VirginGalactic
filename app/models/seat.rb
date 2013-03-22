@@ -11,9 +11,8 @@
 #  updated_at :datetime         not null
 #
 
-FactoryGirl.define do
-  factory :seat, class: Seat do
-    row     4
-    col  20
-  end
+class Seat < ActiveRecord::Base
+attr_accessible :row, :col
+belongs_to :flight
+belongs_to :user
 end

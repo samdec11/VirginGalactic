@@ -10,7 +10,6 @@
 #  plane_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  flight_num :integer
 #
 
 FactoryGirl.define do

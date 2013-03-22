@@ -10,9 +10,10 @@
 #  plane_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  flight_num :integer
 #
 
 class Flight < ActiveRecord::Base
 attr_accessible :name, :origin,:dest,:dep_time
+belongs_to :plane
+has_many :seats
 end

@@ -10,7 +10,6 @@
 #  plane_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  flight_num :integer
 #
 
 require 'spec_helper'
@@ -38,7 +37,7 @@ describe Flight do
     it 'has a plane' do
       plane = FactoryGirl.create(:plane)
       flight.plane = plane
-      flight.plane.should eq plane
+      expect(flight.plane).to eq plane
     end
   end
 
@@ -46,7 +45,7 @@ describe Flight do
     it 'has seats' do
       seat = FactoryGirl.create(:seat)
       flight.seats << seat
-      flight.seats.count.should eq 1
+      expect(flight.seats.count).to eq 1
     end
   end
 end
