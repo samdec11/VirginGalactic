@@ -21,13 +21,12 @@ ActiveRecord::Schema.define(:version => 20130322014009) do
     t.integer  "plane_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "flight_num"
   end
 
   create_table "planes", :force => true do |t|
     t.string   "name"
     t.integer  "cols"
-    t.integer  "row"
+    t.integer  "rows"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
