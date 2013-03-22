@@ -13,7 +13,7 @@ describe '/plane' do
         click_link('Create Plane')
         page.should have_button('Create Plane')
         page.should have_link('Cancel')
-        page.should_not have_link('Create Plane')
+        expect(find_link('Create Plane').visible?).to eq false
       end
     end
 
@@ -22,23 +22,25 @@ describe '/plane' do
         visit planes_path
         click_link('Create Plane')
         pl = Plane.new(name:"Baby Plane",rows:2,cols:4)
-        fill_in('name', :with => pl.name)
-        fill_in('rows', :with => pl.rows)
-        fill_in('cols',with:pl.cols)
+        fill_in('plane_name', :with => pl.name)
+        fill_in('plane_rows', :with => pl.rows)
+        fill_in('plane_cols',with:pl.cols)
         click_button('Create Plane')
+        page.should_not have_button('Create Plane')
+        page.should_not have_link('Cancel')
         #expecting the create!
-        expect(Plane.first).to eq pl
+        expect(Plane.first.name).to eq pl.name
       end
       it 'does not save a plane with missing name,row,col',js:true do
         visit planes_path
         click_link('Create Plane')
         pl = Plane.new(name:"Baby Plane",rows:2,cols:4)
-        fill_in('name', :with => pl.name)
-        fill_in('rows', :with => "") #No row!
-        fill_in('cols',with:pl.cols)
+        fill_in('plane_name', :with => pl.name)
+        fill_in('plane_rows', :with => "") #No row!
+        fill_in('plane_cols',with:pl.cols)
         click_button('Create Plane')
         #expecting the create!
-        expect(Plane.first).to_not eq pl
+        expect(Plane.first).to eq nil
       end
      # it 'hides form on create',js:true do
      # end
