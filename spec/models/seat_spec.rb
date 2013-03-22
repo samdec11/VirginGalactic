@@ -1,6 +1,7 @@
 require 'spec_helper'
 describe seat do
-  let(:seat) {Seat.create(row:2,col:3,user_id:1,flight_id:2)}
+
+ let(:seat) {Seat.create(row:2,col:3,user_id:1,flight_id:2)}
 
   describe '.new' do
     it 'creates an instance of a seat' do
@@ -14,6 +15,8 @@ describe seat do
       seat.col.should eq 3
     end
   end
+
+
 
   describe '#flight' do
     it 'has a plane' do

@@ -1,6 +1,6 @@
 require 'spec_helper'
 describe Flight do
-  let(:flight) {Flight.create(flight_num: '18', origin: 'NYC', dest: 'MIA', date: '2013-04-20')}
+  let(:flight) {Flight.create(flight_num: '18', origin: 'NYC', dest: 'MIA', dep_time: '2013-04-20')}
 
   describe '.new' do
     it 'creates an instance of a flight' do
@@ -12,10 +12,10 @@ describe Flight do
   describe '.create' do
     it 'creates a flight' do
       flight.should be_an_instance_of(Flight)
-      flight.name.should eq '18'
+      flight.flight_num.should eq 18
       flight.origin.should eq 'NYC'
       flight.dest.should eq 'MIA'
-      flight.date.should eq '2013-04-20'
+      flight.dep_time.should eq flight.dep_time
     end
   end
 
