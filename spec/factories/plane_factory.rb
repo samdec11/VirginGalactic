@@ -1,3 +1,4 @@
+=begin
 FactoryGirl.define do
   factory :plane, class: Plane do
     name '747'
@@ -5,3 +6,4 @@ FactoryGirl.define do
     columns '20'
   end
 end
+=end

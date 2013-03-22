@@ -1,3 +1,4 @@
+=begin
 FactoryGirl.define do
   factory :user, class: User do
     name 'bob'
@@ -7,3 +8,4 @@ FactoryGirl.define do
     is_admin false
   end
 end
+=end
