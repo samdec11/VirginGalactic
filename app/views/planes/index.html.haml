@@ -2,7 +2,5 @@
 #form
 .row
   .columns.large-12
-    =form_tag "something", remote:true do
-      =select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name')
-    #planestuff
-      =render :partial => 'showplane'
+      #planestuff
+        =render :partial => 'showplane'

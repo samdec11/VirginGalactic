@@ -1,7 +1,6 @@
 class PlanesController < ApplicationController
   before_filter :require_admin
   def index
-
     @planes = Plane.all
   end
   def new
