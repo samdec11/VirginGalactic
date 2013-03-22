@@ -1,0 +1,6 @@
+<% if session[:user_id].present? %>
+  $('#links').empty().append('<%=j render(:partial => 'home/links') %>');
+  $('#form').empty();
+<% else %>
+  $('#form').empty().append('<%=j render(:partial => 'form') %>');
+<% end %>
