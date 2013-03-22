@@ -11,8 +11,9 @@ class Plane
   @change_plane_data: ->
     planeid = $("#plane_select").val()
     $.ajax({
-      dataType: 'json'
+      dataType: 'script'
       type: "get"
-      url: "/priorities/" +id + "/up"
-    }).done(resort);
+      url: "/planes/" +planeid
+    }).done(show_new_plane);
 $(document).ready(Plane.document_ready)
+
