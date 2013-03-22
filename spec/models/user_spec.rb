@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  password_digest :string(255)
+#  is_admin        :boolean
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 require 'spec_helper'
 
 describe User do
@@ -13,4 +26,11 @@ describe User do
     end
   end
 
+  describe '#seat' do
+    it 'has seats' do
+      seat = FactoryGirl.create(:seat)
+      user.seats << seat
+      expect(user.seats.first).to be_an_instance_of(Seat)
+    end
+  end
 end
