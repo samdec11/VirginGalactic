@@ -1,9 +1,45 @@
-.row
-  .large-3.columns
-    =form_tag '/login', :remote => true do
-      = label_tag :email
-      = text_field_tag :email
-      = label_tag :password
-      = password_field_tag :password
-      = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius alert')
-      = submit_tag 'Fly away!'
+/ .row
+/   .large-3.columns
+/     =form_tag '/login', :remote => true do
+/       = label_tag :email
+/       = text_field_tag :email
+/       = label_tag :password
+/       = password_field_tag :password
+/       = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius alert')
+/       = submit_tag 'Fly away!'
+\%head
+\%title Nettuts JQuery Sliding Panel
+\:css
+@import url(style.css);
+\%script{:src => "jquery.js", :type => "text/javascript"}
+</
+%wbr
+  %script{:src => "javascript.js", :type => "text/javascript"}
+#header
+  %h1 Sliding Panel
+  %br/
+  %h2 jQuery Sliding Panel Demonstration for NETTUTS
+%hr#header_stripe/
+#wrapper
+  #toppanel
+    #panel
+      #panel_contents
+    .panel_button
+      %a{:href => "#"} Login Here
+    .panel_button
+      %a{:href => "#"} Hide
+#content
+
+
+
+%img.border_pic{:alt => "Screenshot", :src => "images/tutsplus.jpg"}/
+#login.border
+  %p
+    Username:
+    %input#username{:name => "username", :size => "15", :type => "text"}/
+    %br/
+    Password:
+    %input#password{:name => "password", :size => "15", :type => "password"}/
+    %br/
+    %input#login_btn{:accesskey => "l", :name => "login", :type => "button", :value => "Login"}/
+
