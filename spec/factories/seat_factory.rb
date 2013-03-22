@@ -13,7 +13,7 @@
 
 FactoryGirl.define do
   factory :seat, class: Seat do
-    row     4
+    row  4
     col  20
   end
 end

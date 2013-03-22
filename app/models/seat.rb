@@ -13,6 +13,6 @@
 
 class Seat < ActiveRecord::Base
 attr_accessible :row, :col
-belongs_to :flight
-belongs_to :user
+belongs_to :flight, :inverse_of => :seats
+belongs_to :user, :inverse_of => :seats
 end

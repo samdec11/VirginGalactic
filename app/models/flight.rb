@@ -14,6 +14,6 @@
 
 class Flight < ActiveRecord::Base
 attr_accessible :name, :origin,:dest,:dep_time
-belongs_to :plane
-has_many :seats
+belongs_to :plane, :inverse_of => :flights
+has_many :seats, :inverse_of => :flight
 end
