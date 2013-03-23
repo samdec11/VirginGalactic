@@ -1,5 +1,5 @@
 class FlightsController < ApplicationController
-  before_filter :require_admin
+  before_filter :require_admin, :except => [:show, :search, :results]
   def index
     @flights = Flight.order(:dep_time)
   end

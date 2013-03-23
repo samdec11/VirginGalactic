@@ -17,7 +17,7 @@ describe 'Flight Show' do
     visit root_path
     click_link('Login')
     fill_in('Email', :with => user.email)
-    fill_in('Password', :with => 'a')
+    fill_in('Password', :with => user.password)
     click_button('Fly away!')
     visit flight_path(flight)
   end
