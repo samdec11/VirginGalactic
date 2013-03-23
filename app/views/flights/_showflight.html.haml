@@ -8,7 +8,7 @@
     %th From > To
     %th Plane
     %th Seats
-  - Flight.order(:name).each do |flight|
+  - @flights.each do |flight|
     %tr
       %td= flight.dep_time
       %td= link_to(flight.name, flight)

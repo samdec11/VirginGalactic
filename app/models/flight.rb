@@ -17,7 +17,7 @@ class Flight < ActiveRecord::Base
   belongs_to :plane, :inverse_of => :flights
   has_many :seats, :inverse_of => :flight
 
-  def create_plane(params)
+  def self.create_plane(params)
    @flight = Flight.create(params[:flight])
    @flight.plane_id = params[:plane_select]
    @flight.save
