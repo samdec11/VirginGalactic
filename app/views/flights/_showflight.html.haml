@@ -1,0 +1,17 @@
+/ -if @flight.nil?
+/   %h3 Please Add a Flight
+/ -else
+%table#flights
+  %tr
+    %th Date
+    %th Flight
+    %th From > To
+    %th Plane
+    %th Seats
+  - @flights.each do |flight|
+    %tr
+      %td= flight.dep_time
+      %td= link_to(flight.name, flight)
+      %td= flight.origin + ' > ' + flight.dest
+      %td= flight.plane.name
+      %th= flight.seats.count

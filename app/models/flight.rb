@@ -13,7 +13,16 @@
 #
 
 class Flight < ActiveRecord::Base
-attr_accessible :name, :origin,:dest,:dep_time
-belongs_to :plane, :inverse_of => :flights
-has_many :seats, :inverse_of => :flight
+  attr_accessible :name, :origin,:dest,:dep_time,:plane_id
+  belongs_to :plane, :inverse_of => :flights
+  has_many :seats, :inverse_of => :flight
+
+  def self.create_plane(params)
+   @flight = Flight.create(params[:flight])
+   @flight.plane_id = params[:plane_select]
+   @flight.save
+ end
+
+
 end
+

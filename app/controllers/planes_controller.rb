@@ -14,6 +14,7 @@ class PlanesController < ApplicationController
      if p1.save
         @plane = p1
      end
+     @planes = Plane.all
   end
   def show
     @plane = Plane.find(params[:id])
