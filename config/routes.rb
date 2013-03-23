@@ -9,4 +9,5 @@ Virgingalactic::Application.routes.draw do
 
   resources :planes
   resources :flights
+
 end
