@@ -40,15 +40,16 @@ describe 'Flights' do
       expect(Flight.first.plane).to eq plane
     end
   end
-end
 
+  private
+  def login_admin
+    user = User.create(name: 'admin', email: 'admin@gmail.com', password: 'a', password_confirmation: 'a', is_admin: true)
+    visit root_path
+    click_link('Login')
+    fill_in('Email', :with => user.email)
+    fill_in('Password', :with => 'a')
+    click_button('Fly away!')
+    click_link('Flights')
+  end
 
-def login_admin
-  user = User.create(name: 'admin', email: 'admin@gmail.com', password: 'a', password_confirmation: 'a', is_admin: true)
-  visit root_path
-  click_link('Login')
-  fill_in('Email', :with => user.email)
-  fill_in('Password', :with => 'a')
-  click_button('Fly away!')
-  click_link('Flights')
 end
