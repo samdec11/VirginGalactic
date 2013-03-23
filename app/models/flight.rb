@@ -18,21 +18,14 @@ class Flight < ActiveRecord::Base
   has_many :seats, :inverse_of => :flight
 
   def self.create_plane(params)
-      flight = Flight.create(params[:flight])
-      flight.plane_id = params[:plane_select]
-      flight.save
-      flight.plane.rows.times do |r|
-        flight.plane.cols.times do |c|
-          flight.seats << Seat.create(row:r, col:c,flight_id:flight.id)
-        end
+    flight = Flight.create(params[:flight])
+    flight.plane_id = params[:plane_select]
+    flight.save
+    flight.plane.rows.times do |r|
+      flight.plane.cols.times do |c|
+        flight.seats << Seat.create(row:r, col:c,flight_id:flight.id)
       end
-      flight.save
+    end
+    flight.save
   end
-
-  def addseats
-
-  end
-
-
 end
-

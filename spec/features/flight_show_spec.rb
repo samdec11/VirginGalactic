@@ -9,6 +9,7 @@ describe 'Flight Show' do
       page.should have_text('LAX')
     end
   end
+  describe 'POST /'
 
   private
   def login_as_regular_user
@@ -18,7 +19,6 @@ describe 'Flight Show' do
     click_link('Login')
     fill_in('Email', :with => user.email)
     fill_in('Password', :with =>user.password)
-    sleep 5.seconds
     click_button('Fly away!')
     visit flight_path(flight)
   end
