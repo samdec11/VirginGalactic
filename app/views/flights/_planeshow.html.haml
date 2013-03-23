@@ -5,9 +5,13 @@
       %td
         -s  =@flight.seats.where(row:row, col:col).first
         -if s.user_id.present?
-          .filled Taken
+          .filled.has-tip{:title =>s.user.name} Taken
         -else
           .empty{:'data-id' => s.id} Empty
+
+
+
+
 
 
 
