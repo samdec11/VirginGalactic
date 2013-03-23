@@ -8,7 +8,9 @@ class FlightsController < ApplicationController
     @planes = Plane.all
   end
   def create
-    Flight.create_plane(params)
+    f = Flight.create(params[:flight])
+    i = params[:plane_select].to_i
+    f.create_seats(i)
     @flights = Flight.order(:dep_time)
   end
 
