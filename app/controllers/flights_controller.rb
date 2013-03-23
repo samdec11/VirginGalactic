@@ -10,10 +10,8 @@ class FlightsController < ApplicationController
   def create
     Flight.create_plane(params)
     @flights = Flight.order(:dep_time)
-    # @flight = Flight.create(params[:flight])
-    # @flight.plane_id = params[:plane_select]
-    # @flight.save
   end
+
   def show
     @flight = Flight.find(params[:id])
   end

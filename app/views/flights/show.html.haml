@@ -1,1 +1,8 @@
-$('#flightstuff').empty().append("<%=j render partial:'showflight'%>");
+-if @flight.present?
+  .flightinfo
+    .name=@flight.name
+    .org=@flight.origin
+    .des=@flight.dest
+    .date=@flight.dep_time
+-else
+  Error Page Not Found. _ERROR-55
