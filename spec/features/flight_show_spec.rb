@@ -13,9 +13,10 @@ describe 'Flight Show' do
       page.should have_css('table tr td .empty')
     end
   end
-  describe 'POST /seats/3/reserve' do
+  describe 'POST /seats/3/reserve', :js => true do
     it 'reserves the seat for the user' do
-
+      login_as_regular_user
+      find('tr:first-child').find('td:first-child').find('.empty:first-child').click
     end
   end
 
