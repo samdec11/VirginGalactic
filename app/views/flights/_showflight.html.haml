@@ -11,7 +11,7 @@
   - Flight.order(:name).each do |flight|
     %tr
       %td= flight.dep_time
-      %td= flight.name
+      %td= link_to(flight.name, flight)
       %td= flight.origin + ' > ' + flight.dest
       %td= flight.plane.name
       %th= flight.seats.count
