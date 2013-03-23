@@ -1,51 +1,6 @@
-<head>
-<title>Nettuts JQuery Sliding Panel</title>
-<style type="text/css">
-@import url(style.css);
-</style>
-<script src="jquery.js" type="text/javascript"></
-<wbr>
-    script> <script src="javascript.js" type="text/javascript"></<wbr>script>
-</head>
-
-
-
-<div id="header">
-  <h1>Sliding Panel</h1>
-  <br />
-  <h2>jQuery Sliding Panel Demonstration for NETTUTS</h2>
-</div>
-
-<hr id="header_stripe"/>
-
-<div id="wrapper">
-  <div id="toppanel">
-
-    <div id="panel">
-      <div id="panel_contents"> </div>
-    </div>
-    <div class="panel_button"><a href="#">Login Here</a></div>
-
-    <div class="panel_button"><a href="#">Hide</a></div>
-  </div>
-</div>
-<div id="content">
-
-</div>
-
-
-<img class="border_pic" src="images/tutsplus.jpg" alt="Screenshot" />
-<div class="border" id="login">
-
-  <p>Username:
-    <input type="text" size="15" name="username" id="username" />
-
-    <br />
-    Password:
-    <input type="password" size="15" name="password" id="password" />
-
-    <br />
-    <input type="button" accesskey="l" id="login_btn" name="login" value="Login" />
-
-  </p>
-</div>
+.panel_button{:style => "display: visible;"}
+  %img{:alt => "expand", :src => "images/expand.png"}/
+  %a{:href => "#"} Login Here
+#hide_button.panel_button{:style => "display: none;"}
+  %img{:alt => "collapse", :src => "images/collapse.png"}/
+  %a{:href => "#"} Hide
