@@ -19,9 +19,9 @@
 /   %script{:src => "home.js", :type => "text/javascript"}
 
 #header
-  %h1 Sliding Panel
-  %br
-  %h2 jQuery Sliding Panel Demonstration for NETTUTS
+  / %h1 Sliding Panel
+  / %br
+  / %h2 jQuery Sliding Panel Demonstration for NETTUTS
 %hr#header_stripe
 #wrapper
   #toppanel
@@ -38,13 +38,13 @@
             %input#password{:name => "password", :size => "15", :type => "password"}/
             %br/
             %input#login_btn{:accesskey => "l", :name => "login", :type => "button", :value => "Login"}/
-    .panel_button
+    .panel_button{:style => 'display: visible;'}
       / %img{:alt => "expand", :src => "images/kitten.jpg"}/
-      = image_tag 'kitten.jpg', :alt => "Expand"
+      = image_tag 'plus.png', :alt => "expand"
       %a{:href => "#"} Login Here
-    .panel_button
+    .panel_button#hide_button{:style => 'display: none;'}
       / %img{:alt => "collapse", :src => "images/jill_profile_pic.png"}/
-      = image_tag 'jill_profile_pic.jpg', :alt => "Collapse"
+      = image_tag 'jill_profile_pic.jpg', :alt => "collapse"
       %a{:href => "#"} Hide
 #content
   %p This better be one gorgeous fucking login menu.

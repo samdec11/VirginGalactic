@@ -14,7 +14,7 @@ body
     margin-right: auto;
     width: 100%;
     height: 135px;
-    background: #3f3f3f url(<%= asset_path('Virgin_Galactic.png')%>) no-repeat center ;
+    background: black url(<%= asset_path('Virgin_Galactic.png')%>) no-repeat center ;
     position: relative;
     border-bottom: 1px solid #4a4a4a;
 }
@@ -45,28 +45,28 @@ hr#header_stripe
     background-color: #191919;
     border: none;
     color: #191919;
+    margin: 0;
 }
 
 #wrapper{
+    position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 900px;
+    width: 904px;
     text-align: center;
+    top: -32px;
 }
 #toppanel {
     position: absolute;
-    top: 135px;
     width: 900px;
     z-index: 25;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 #panel {
     width: 900px;
     position: relative;
     top: 1px;
-    height: 400px; /* 400 or 0? */
+    height: 0px; /* 400 or 0? */
     margin-left: auto;
     margin-right: auto;
     z-index: 10;
@@ -139,7 +139,7 @@ div#login input#login_btn {
     top: 1px;
     width: 173px;
     height: 54px;
-    background: url(<%= asset_path('kitten.jpg') %>);
+    background: url(<%= asset_path('panel_button.png') %>);
     z-index: 20;
     filter:alpha(opacity=70);
     -moz-opacity:0.70;
