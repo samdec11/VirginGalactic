@@ -101,15 +101,15 @@ describe 'Planes' do
       #page.should have_selector('plane_select, :count => 2')
     end
   end
-end
-
-def login_admin
-  user = User.create(name: 'admin', email: 'admin@gmail.com', password: 'a', password_confirmation: 'a', is_admin: true)
-  visit root_path
-  click_link('Login')
-  fill_in('Email', :with => user.email)
-  fill_in('Password', :with => 'a')
-  click_button('Fly away!')
-  page.should_not have_link('Login')
-  visit planes_path
+  private
+  def login_admin
+    user = User.create(name: 'admin', email: 'admin@gmail.com', password: 'a', password_confirmation: 'a', is_admin: true)
+    visit root_path
+    click_link('Login')
+    fill_in('Email', :with => user.email)
+    fill_in('Password', :with => 'a')
+    click_button('Fly away!')
+    page.should_not have_link('Login')
+    visit planes_path
+  end
 end
