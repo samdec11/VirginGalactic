@@ -1,5 +1,5 @@
 class FlightsController < ApplicationController
-  before_filter :require_admin
+  before_filter :require_admin, :except => [:show, :search, :results]
   def index
     @flights = Flight.order(:dep_time)
   end
@@ -8,12 +8,12 @@ class FlightsController < ApplicationController
     @planes = Plane.all
   end
   def create
-    Flight.create_plane(params)
+    f = Flight.create(params[:flight])
+    i = params[:plane_select].to_i
+    f.create_seats(i)
     @flights = Flight.order(:dep_time)
-    # @flight = Flight.create(params[:flight])
-    # @flight.plane_id = params[:plane_select]
-    # @flight.save
   end
+
   def show
     @flight = Flight.find(params[:id])
   end
