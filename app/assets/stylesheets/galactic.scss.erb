@@ -1,12 +1,26 @@
 /* THIS IS EVIL */
 body
 {
-    background: #202020;
+    // background: #091126;
     text-align: center;
     margin: 0;
 }
 
 /*LOGIN MENU*/
+
+.login_options
+{
+  color: white;
+}
+
+.button
+{
+  background-color: #081736;
+}
+.form_buttons
+{
+  background-color: #434469
+}
 
 #header
 {
@@ -14,7 +28,7 @@ body
     margin-right: auto;
     width: 100%;
     height: 135px;
-    background: black url(<%= asset_path('Virgin_Galactic.png')%>) no-repeat center ;
+    background: black no-repeat center ;
     position: relative;
     border-bottom: 1px solid #4a4a4a;
 }
@@ -42,7 +56,7 @@ hr#header_stripe
     height: 12px;
     position: relative;
     top: -7px;
-    background-color: #191919;
+    background-color: #081736;
     border: none;
     color: #191919;
     margin: 0;
@@ -54,7 +68,8 @@ hr#header_stripe
     margin-right: auto;
     width: 904px;
     text-align: center;
-    top: -32px;
+    top: -20px;
+    height: 194px;
 }
 #toppanel {
     position: absolute;
@@ -80,7 +95,7 @@ hr#header_stripe
     -khtml-opacity: 0.70;
     opacity: 0.70;
     height: 100%;
-    width: 904px; /* 950px or 904px? */
+    width: 850px; /* 950px or 904px? */
     position: absolute;
     z-index: -1;
 }
@@ -89,42 +104,48 @@ hr#header_stripe
     border: 15px #1d1d1d solid;
 }
 
-img.border_pic {
-    border: 15px #1d1d1d solid;
-    position: absolute;
-    top: 110px; /* 110px or 150px? */
-    float: left;
-    margin-left: 150px; /* 150px or 475px? */
-    width: 275px; /* 250px or 275px? */
-    height: 150px;
-    z-index: 30;
+#form_slider {
+  position: relative;
+  overflow: hidden;
+  height: inherit;
+
+  .login {
+      width: 240px; /* 240px or 265px? */
+      height: 150px; /*150 or 200?*/
+      position: absolute;
+      right: 150px;
+      top: 30px;
+      background: #46392f;
+      text-align: left;
+      padding-left: 10px; /* or 15? */
+      padding-left: 15px;
+      width: 700px;
+      height: 225px;
+
+      &#login_form{
+        left: 75px;
+        background-color: 081736;
+      }
+
+      &#register_form{
+        left: 850px;
+      }
+  }
 }
-div#login {
-    width: 240px; /* 240px or 265px? */
-    height: 150px; /*150 or 200?*/
-    position: absolute;
-    right: 150px;
-    top: 110px;
-    background: #46392f;
-    text-align: left;
-    padding-left: 10px; /* or 15? */
-}
-div#login p {
+
+div.login p {
     color: #CCCCCC;
     font-family: Century Gothic, Georgia, "Times New Roman", Times, serif;
     line-height: 25px;
     // width: 200px;
 }
 
-// div#login.border{
-//     margin-left: 150px;
-// }
-div#login input#password {
+div.login input#password {
     position: relative;
     right: -6px;
     // width: 200px;
 }
-div#login input#login_btn {
+div.login input.login_btn {
     border: 1px #899690 solid;
     cursor: pointer;
     position: relative;
@@ -146,8 +167,8 @@ div#login input#login_btn {
     -khtml-opacity: 0.70;
     opacity: 0.70;
     cursor: pointer;
-}
-.panel_button a {
+
+  a {
     text-decoration: none;
     color: #545454;
     font-size: 20px;
@@ -156,58 +177,37 @@ div#login input#login_btn {
     top: 5px;
     left: 10px;
     font-family: Arial, Helvetica, sans-serif;
-}
-.panel_button a:hover {
-color: #999999;
+
+    &:hover {
+      color: #999999;
+    }
+  }
+
+  img{
+    position: relative;
+    top: 10px;
+    border: none;
+    display: inline-block;
+  }
 }
 
-.panel_button img{
-position: relative;
-top: 10px;
-border: none;
-}
+
 
 #content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 600px;
-    position: relative;
-    top: 90px;
-    text-align: left;
-    color: #545454;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    padding-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  position: relative;
+  top: 90px;
+  text-align: left;
+  color: #545454;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding-bottom: 30px;
 }
+
 /*END LOGIN MENU
 */
-
-/*LOGO SHEEN EFFECT*/
-
-.logo {
-    display: block;
-    background: url(<%= asset_path('Virgin_Galactic.png')%>) 0 0 no-repeat;
-    height: 70px;
-    width: 91px;
-    overflow: hidden;
-}
-
-.logo span {
-    display: block;
-    background: url(<%= asset_path('Virgin_Galactic.png')%>) -60px -80px no-repeat;
-
-    transition-property: all;
-    transition-duration: .8s;
-
-    height: 70px;
-    width: 91px;
-}
-
-// .logo:hover span {
-//     background-position: 100px 100px;
-// }
-/*LOGO SHEEN EFFECT END*/
-
 /*
 MAP*/
 /*.map {
