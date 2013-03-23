@@ -18,6 +18,7 @@ describe 'Flight Show' do
     click_link('Login')
     fill_in('Email', :with => user.email)
     fill_in('Password', :with => 'a')
+    sleep 5.seconds
     click_button('Fly away!')
     visit flight_path(flight)
   end
