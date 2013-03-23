@@ -1,9 +1,41 @@
-.row
-  .large-3.columns
-    =form_tag '/login', :remote => true do
-      = label_tag :email
-      = text_field_tag :email
-      = label_tag :password
-      = password_field_tag :password
-      = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius alert')
-      = submit_tag 'Fly away!'
+#header
+  / %h1 Sliding Panel
+  / %br
+  / %h2 jQuery Sliding Panel Demonstration for NETTUTS
+%hr#header_stripe
+#wrapper
+  #toppanel
+    #panel
+      #panel_contents
+        %br
+        %br
+        .login_options#create_account
+          %p Create Account
+        .login_options#login
+          %p Login
+        #form_slider
+          .login.border#login_form
+            %p
+              =form_tag '/login', :remote => true do
+                = label_tag :email
+                = text_field_tag :email
+                = label_tag :password
+                = password_field_tag :password
+                = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius', :class => 'form_buttons')
+                = submit_tag 'Fly away!', :class => 'form_buttons'
+          .login.border#register_form
+            %p
+              =form_tag '/login', :remote => true do
+                = label_tag :email
+                = text_field_tag :email
+                = label_tag :password
+                = password_field_tag :password
+                = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius', :class => 'form_buttons')
+                = submit_tag 'Fly away!', :class => 'form_buttons'
+    .panel_button{:style => 'display: visible;'}
+      = image_tag 'plus.png', :alt => "expand"
+      %a{:href => "#"} Login Here
+    .panel_button#hide_button{:style => 'display: none;'}
+      = image_tag 'minus.png', :alt => "collapse"
+      %a{:href => "#"} Hide
+
