@@ -7,3 +7,4 @@
 //= require 'underscore-min'
 //= require 'home'
 //= require 'plane.js'
+//= require 'flight.js'

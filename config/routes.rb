@@ -8,4 +8,5 @@ Virgingalactic::Application.routes.draw do
   delete '/login' => 'session#destroy'
 
   resources :planes
+  resources :flights
 end

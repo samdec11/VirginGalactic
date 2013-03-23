@@ -15,5 +15,6 @@ class Plane
       type: "get"
       url: "/planes/" +planeid
     }).done(show_new_plane);
+
 $(document).ready(Plane.document_ready)
 
