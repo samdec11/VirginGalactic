@@ -1,0 +1,24 @@
+%table
+  -@flight.plane.rows.times do |row|
+    %tr
+    -@flight.plane.cols.times do |col|
+      %td
+        -s  =@flight.seats.where(row:row, col:col).first
+        -if s.user_id.present?
+          .filled Taken
+        -else
+          .empty{:'data-id' => s.id} Empty
+
+
+
+
+
+
+
+
+  / -@flight.seats.order(:row).order(:col).each do |seat|
+  /   -if seat.
+  /   - if seat.user_id.present?
+  /     .filled Filled
+  /   - else
+  /     .empty Empty
