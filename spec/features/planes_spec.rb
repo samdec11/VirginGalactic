@@ -22,7 +22,7 @@ describe 'Planes' do
   end
 
   describe 'Post /create' do
-    it 'saves a plane',js:true do
+    it 'saves a plane', js:true do
       login_admin
       click_link('Create Plane')
       pl = Plane.new(name:"Baby Plane",rows:2,cols:4)
