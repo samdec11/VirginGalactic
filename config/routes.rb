@@ -7,9 +7,15 @@ Virgingalactic::Application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
+<<<<<<< HEAD
   resources :planes, except: [:destroy, :update]
   resources :flights, except: [:destroy,:show]
 
   get "/search" => 'flights#search', :as => :search
   get "/search/results" => 'flights#results', :as => :search_results
+=======
+  resources :planes
+  resources :flights
+
+>>>>>>> 4ffa88bf67e4ab9af18bdc67592a34437a57b683
 end

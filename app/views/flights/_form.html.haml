@@ -1,0 +1,12 @@
+=form_for @flight, :remote => true do |f|
+  = f.label :name
+  = f.text_field :name, :autofocus => true
+  = f.label :dep_time, 'Date'
+  = f.text_field :dep_time
+  = f.label :origin
+  = f.text_field :origin
+  = f.label :destination
+  = f.text_field :dest
+  = select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name')
+  = f.submit :class => 'button radius success'
+  = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button radius alert', :id => 'cancel_btn')
