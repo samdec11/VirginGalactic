@@ -1,6 +1,6 @@
 -if @planes.present?
   =form_tag "something", remote:true do
-    =select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name')
+    =select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name'), :class => 'select_tag'
 -if @plane.nil?
   %h3 Please Select A Plane
 -else

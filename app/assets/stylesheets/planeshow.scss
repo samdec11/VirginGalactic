@@ -5,6 +5,8 @@
   color: white;
   font-size: 2em;
   margin: 10px;
+  margin-left: 400px;
+  margin-bottom: 25px;
 }
 .seat{
   width: 20px;
@@ -33,4 +35,15 @@
 
 .filled{
   background-image: url('filled_seat.jpg')
+}
+
+.select_tag
+{
+  width: 400px;
+  float: left;
+}
+
+.plane
+{
+  margin-left: 400px;
 }
