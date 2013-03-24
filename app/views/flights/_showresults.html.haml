@@ -7,9 +7,9 @@
       %th Plane
       %th Total Seats
     - @flights.each do |flight|
-      %tr
+      %tr{:class => cycle('row0', 'row1')}
         %td= flight.dep_time
         %td= link_to(flight.name, flight)
         %td= flight.origin + ' > ' + flight.dest
         %td= flight.plane.name
-        %th= flight.seats.count
+        %td= flight.seats.count
