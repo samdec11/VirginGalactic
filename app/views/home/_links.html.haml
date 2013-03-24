@@ -1,7 +1,7 @@
-- if @auth.nil?
+- if @auth.present?
   = link_to('Create Account', new_user_path, :remote => true)
   = link_to('Login', '/login', :remote => true)
 - else
-  = link_to('Planes', planes_path) if @auth.is_admin
-  = link_to('Flights', flights_path) if @auth.is_admin
+  = link_to('Planes', planes_path)
+  = link_to('Flights', flights_path)
   = link_to('Logout', '/login', :remote => true, :method => :delete)

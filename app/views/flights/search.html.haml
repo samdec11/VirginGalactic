@@ -1,14 +1,18 @@
+.row
+  .large-5.columns
 
-= button_to_function('Search', 'show_search_form()', :class => 'button tiny radius alert',id:"searchbtn")
-%script
-  availableTags= ["JFK","LNG"]
+    #search
+      = button_to_function('Search', 'show_search_form()', :class => 'button tiny radius alert',id:"searchbtn")
+      %script
+        availableTags= ["JFK","LNG"]
 
-#search_form.hide
-  =form_tag search_results_path, remote:true, method:'get' do
-    =text_field_tag :from, nil, placeholder:"Origin",:class=> 'airports'
-    =text_field_tag :to, nil, placeholder:"Destination", :class=> 'airports'
-    = button_to_function('Cancel', 'cancel_search()', :class => 'button tiny radius alert')
-    =submit_tag 'Search',:class=>"button success tiny"
+      #search_form.hide
+        =form_tag search_results_path, remote:true, method:'get' do
+          =text_field_tag :from, nil, placeholder:"Origin",:class=> 'airports'
+          =text_field_tag :to, nil, placeholder:"Destination", :class=> 'airports'
+          = button_to_function('Cancel', 'cancel_search()', :class => 'button tiny radius alert')
+          =submit_tag 'Search',:class=>"button success tiny"
 
-#results
-  =render partial:'showresults'
+      #results
+        =render partial:'showresults'
+  .large-7.columns
