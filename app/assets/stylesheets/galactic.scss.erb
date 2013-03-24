@@ -1,3 +1,5 @@
+@import 'colors';
+
 /* THIS IS EVIL */
 body
 {
@@ -11,12 +13,39 @@ body
     margin: 0;
 }
 
+// */ FORMS */
+
+table
+{
+  font-size: 24px;
+
+  .row0 td
+  {
+    color: $row_fg0_color;
+    background-color: $row_bg0_color;
+  }
+
+  .row1 td
+  {
+    color: $row_fg1_color;
+    background-color: $row_bg1_color;
+  }
+}
+
+  img
+  {
+    width: 200px;
+    height: 200px;
+  }
+
+// */ END FORMS */
+
 
 /*LOGIN MENU*/
 
-form_tag
+table
 {
-  color: white;
+  width: 1000px;
 }
 
 .login_options
