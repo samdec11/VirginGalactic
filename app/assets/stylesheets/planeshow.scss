@@ -9,3 +9,18 @@
 .inline{
   display: inline-block;
 }
+
+.empty, .filled{
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+.empty{
+  background-image: url('empty_seat.jpg');
+  cursor: pointer;
+}
+
+.filled{
+  background-image: url('filled_seat.jpg')
+}

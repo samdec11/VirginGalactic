@@ -27,8 +27,8 @@
         %td
           - s = @flight.seats.where(row:row, col:col).first
           -if s.user_id.present?
-            .filled.has-tip{:title =>s.user.name} Taken
+            .filled.has-tip{:title =>s.user.name}
           -else
-            .empty{:'data-id' => s.id} Empty
+            .empty{:'data-id' => s.id}
 
 
