@@ -1,8 +1,8 @@
 $(function(){
   $("body").on("click", ".panel_button", bounce_down);
   $("body").on("click", "#hide_button", bounce_hide);
-  $('#create_account').click(slide_form_left);
-  $('#login').click(slide_form_right);
+  // $("body").on("click", "#create_account", slide_form_left);
+  // $("body").on("click", "#login", slide_form_right);
 });
 
 function clear_form() {
@@ -20,11 +20,12 @@ function bounce_hide(e){
   $("div#panel").animate({height: "0px"}, "fast");
 }
 
-function slide_form_left(e){
-  e.preventDefault();
-  $('#form_slider').animate({ left: "-775px"});
-}
-function slide_form_right(e){
-  e.preventDefault();
-  $('#form_slider').animate({ left: "0"});
-}
+// function slide_form_left(e){
+//   e.preventDefault();
+//   $('#form_slider').animate({ left: "0"});
+// }
+// function slide_form_right(e){
+//   e.preventDefault();
+//   $('#form_slider').animate({ left: "-685px"});
+// }
+

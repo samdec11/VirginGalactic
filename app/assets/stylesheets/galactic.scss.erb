@@ -14,7 +14,7 @@ body
 
 /*LOGIN MENU*/
 
-.form_text
+form_tag
 {
   color: white;
 }
@@ -137,25 +137,27 @@ hr#header_stripe
     margin: 0;
 }
 
-#form_slider {
-  position: relative;
-  overflow: hidden;
-  height: inherit;
+// #form_slider {
+//   position: relative;
+//   overflow: hidden;
+//   height: inherit;
 
-  .login {
+.login {
       width: 240px; /* 240px or 265px? */
       height: 150px; /*150 or 200?*/
-      position: absolute;
+      // position: absolute;
       right: 150px;
       top: 30px;
       background: #2ba6cb;
       text-align: left;
       padding-left: 10px; /* or 15? */
       padding-left: 15px;
-      width: 700px;
+      width: 350px;
       height: 225px;
+      float: left;
 
       &#login_form{
+        padding-top: 25px;
         left: 75px;
         background: url('jpl2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -163,15 +165,23 @@ hr#header_stripe
   -o-background-size: cover;
   background-size: cover;
     text-align: center;
-    margin: 0;
+    margin-left: 30px;
         // background-color: #2ba6cb;
       }
 
       &#register_form{
         left: 850px;
+        float: left;
+        background: url('jpl2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    text-align: center;
+    margin-left: 60px;
       }
   }
-}
+
 
 div.login p {
     color: #CCCCCC;
@@ -248,124 +258,11 @@ div.login input.login_btn {
 
 /*END LOGIN MENU
 */
-/*
-MAP*/
-/*.map {
-    position: relative;
 
-    min-height: 280px;
+FLIGHTS
 
-    border-radius: 5px;
-
-    background-image: url('img/map.png'), url('img/grunge-bg.jpg');
-    background-position: -82px -129px, 50% 50%;
-    background-size: 1098px auto, 260px auto;
-    background-repeat: no-repeat, repeat;
+th
+{
+  width: 500px;
+  font-size: 24px;
 }
-.map .city {
-    position: absolute;
-
-    width: 14px;
-    height: 14px;
-
-    border-radius: 0 7px 7px;
-
-    background-color: rgba(236,213,140,0.8);
-
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4);
-    transform: rotate(45deg);
-    transition:
-        box-shadow 400ms ease,
-        undefined undefined undefined,
-        undefined undefined undefined;
-}
-.map .city:hover {
-    box-shadow:
-        0 0 20px 5px rgba(236,213,140,0.9),
-        inset 0 0 5px 0 rgba(255,255,255,0.9);
-}
-.map .city.san-francisco {
-    left: 148px;
-    top: 132px;
-}
-.map .city.lakewood {
-    left: 225px;
-    top: 136px;
-}
-.map .city.chicago {
-    left: 303px;
-    top: 113px;
-}
-.map .city.manhattan {
-    left: 366px;
-    top: 122px;
-    box-shadow:
-        0 0 20px 5px rgba(236,213,140,0.9),
-        inset 0 0 5px 0 rgba(255,255,255,0.9);
-}
-.map .city.austin {
-    left: 248px;
-    top: 183px;
-}
-.map .city.san-diego {
-    left: 168px;
-    top: 161px;
-}
-.map .city.havana {
-    left: 332px;
-    top: 217px;
-}
-.map .title {
-    margin-top: 90px;
-    margin-bottom: 10px;
-
-    font-family: 'Oswald', sans-serif;
-    color: #c2b385;
-    font-size: 37px;
-    font-weight: normal;
-    text-transform: uppercase;
-}
-.map p {
-    width: 80%;
-    font-family: 'Varela', sans-serif;
-    color: white;
-    font-size: 15px;
-    line-height: 20px;
-}
-@media (max-width: 979px) and (min-width: 768px) {
-    .map {
-        background-position: -162px -139px, 50% 50%;
-    }
-    .map .city {
-        margin-top: -11px;
-        margin-left: -79px;
-    }
-}
-@media (max-width: 767px) {
-    .map {
-        padding: 50px;
-        background-position: -162px -109px, 50% 50%;
-    }
-    .map .city {
-        margin-top: 18px;
-        margin-left: -77px;
-    }
-    .map .title {
-        margin-top: 290px;
-        margin-left: 0px;
-    }
-    .map p {
-        display: inline-block;
-        width: 100%;
-        margin-top: 0px;
-        margin-bottom: 10px;
-    }
-}
-@media (max-width: 480px) {
-    .map {
-        padding: 50px;
-        background-position: -162px -109px, 50% 50%;
-    }
-}
-
-/*END MAP*/

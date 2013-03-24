@@ -7,35 +7,29 @@
   #toppanel
     #panel
       #panel_contents
-        %br
-        %br
-        .login_options#create_account
-          %p Create Account
-        .login_options#login
-          %p Login
         #form_slider
-          .login.border#login_form
-            %p
-              =form_tag '/login', :remote => true do
-                = label_tag :email
-                = text_field_tag :email, nil, :id => 'login_email'
-                = label_tag :password
-                = password_field_tag :password, nil, :id => 'login_password'
-                = button_to_function('Cancel', 'clear_form()', :class => 'form_buttons form_buttons', :id => 'login_cancel')
-                = submit_tag 'Blast Off', :class => 'form_buttons'
           .login.border#register_form
             %p
               =form_for @user, :remote => true do |f|
                 = f.label :name
-                = f.text_field :name
+                = f.text_field :name, :placeholder => 'Buzz'
                 = f.label :email
-                = f.text_field :email
+                = f.text_field :email, :placeholder => 'buzz@gmail.com'
                 = f.label :password
-                = f.password_field :password
+                = f.password_field :password, :placeholder => 'abc'
                 = f.label :password_confirmation, 'Password Confirmation'
-                = f.password_field :password_confimration
-                = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius form_buttons', :id => 'create_cancel')
+                = f.password_field :password_confirmation, :placeholder => 'abc'
+                / = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius form_buttons', :id => 'create_cancel')
                 = f.submit nil, :class => 'form_buttons'
+          .login.border#login_form
+            %p
+              =form_tag '/login', :remote => true do
+                = label_tag :email
+                = text_field_tag :email, nil, :id => 'login_email', :placeholder => 'buzz@gmail.com'
+                = label_tag :password
+                = password_field_tag :password, nil, :id => 'login_password', :placeholder => 'abc'
+                / = button_to_function('Cancel', 'clear_form()', :class => 'form_buttons form_buttons', :id => 'login_cancel')
+                = submit_tag 'Login', :class => 'form_buttons'
     .panel_button{:style => 'display: visible;', :class => 'form_text'}
       = image_tag 'shuttle.png', :alt => "expand"
       %a{:href => "#"} Login
