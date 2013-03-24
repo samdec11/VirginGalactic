@@ -23,7 +23,7 @@
                 = password_field_tag :password, nil, :id => 'login_password'
                 = button_to_function('Cancel', 'clear_form()', :class => 'form_buttons form_buttons', :id => 'login_cancel')
                 = submit_tag 'Blast Off', :class => 'form_buttons'
-          .login.border#register_form
+          .login.border#register_form{:style => 'display: visible;'}
             %p
               %h1 Hello Nick
               =form_for @user, :remote => true do |f|

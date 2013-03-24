@@ -27,4 +27,5 @@ function slide_form_left(e){
 function slide_form_right(e){
   e.preventDefault();
   $('#form_slider').animate({ left: "-685px"});
+  alert("Boom");
 }
