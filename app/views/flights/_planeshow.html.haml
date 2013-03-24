@@ -1,3 +1,25 @@
+-if @flight.present?
+  %table#flights
+    %tr
+      %th Date
+      %th Flight
+      %th From
+      %th To
+      %th Plane
+      %th Total Seats
+      %th Reserved Seats
+      %th Available Seats
+    %tr
+      %td= @flight.dep_time
+      %td= @flight.name
+      %td= @flight.origin
+      %td= @flight.dest
+      %td= @flight.plane.name
+      %th= @flight.seats.count
+      %th= (@flight.seats.count - @flight.empty_seats)
+      %th= @flight.empty_seats
+
+
 %table
   -@flight.plane.rows.times do |row|
     %tr
