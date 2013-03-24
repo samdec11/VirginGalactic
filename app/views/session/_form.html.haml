@@ -22,7 +22,7 @@
                 = label_tag :password
                 = password_field_tag :password, nil, :id => 'login_password'
                 = button_to_function('Cancel', 'clear_form()', :class => 'form_buttons form_buttons', :id => 'login_cancel')
-                = submit_tag 'Fly away!', :class => 'form_buttons'
+                = submit_tag 'Blast Off', :class => 'form_buttons'
           .login.border#register_form
             %p
               =form_for @user, :remote => true do |f|
@@ -36,10 +36,11 @@
                 = f.password_field :password_confimration
                 = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius form_buttons', :id => 'create_cancel')
                 = f.submit nil, :class => 'form_buttons'
-    .panel_button{:style => 'display: visible;'}
-      = image_tag 'plus.png', :alt => "expand"
-      %a{:href => "#"} Login Here
+    .panel_button{:style => 'display: visible;', :class => 'form_text'}
+      = image_tag 'shuttle.png', :alt => "expand"
+      %a{:href => "#"} Login
     .panel_button#hide_button{:style => 'display: none;'}
-      = image_tag 'minus.png', :alt => "collapse"
+      = image_tag 'shuttle.png', :alt => "collapse"
+      %br
       %a{:href => "#"} Hide
 
