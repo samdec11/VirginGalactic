@@ -1,14 +1,15 @@
-%table#flights
-  %tr
-    %th Date
-    %th Flight
-    %th From > To
-    %th Plane
-    %th Seats
-  - @flights.each do |flight|
+-if @auth.present? && (@auth.is_admin == false)
+  %table#flights
     %tr
-      %td= flight.dep_time
-      %td= link_to(flight.name, flight)
-      %td= flight.origin + ' > ' + flight.dest
-      %td= flight.plane.name
-      %th= flight.seats.count
+      %th Date
+      %th Flight
+      %th From > To
+      %th Plane
+      %th Seats
+    - @flights.each do |flight|
+      %tr
+        %td= flight.dep_time
+        %td= link_to(flight.name, flight)
+        %td= flight.origin + ' > ' + flight.dest
+        %td= flight.plane.name
+        %th= flight.seats.count

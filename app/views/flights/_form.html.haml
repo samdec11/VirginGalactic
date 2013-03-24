@@ -9,4 +9,4 @@
   = f.text_field :dest
   = select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name')
   = f.submit :class => 'button radius success'
-  = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button radius alert', :id => 'cancel_btn')
+  = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button radius secondary', :id => 'cancel_btn')

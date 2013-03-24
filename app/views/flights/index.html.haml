@@ -1,7 +1,8 @@
-= link_to('New Flight', new_flight_path, :remote =>true, :id => 'create_flight', :class => 'button radius secondary')
-#form
-
-.row
-  .columns.large-12
-    #flightstuff
-      =render :partial => 'showflight'
+#index
+  -if @auth.present? && (@auth.is_admin == true)
+    =link_to('Add Flight', new_flight_path, :remote => true, :class => 'button secondary')
+  #form
+  .row
+    .columns.large-12
+      #flightstuff
+        =render :partial => 'showflight'
