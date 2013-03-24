@@ -25,6 +25,7 @@
                 = submit_tag 'Blast Off', :class => 'form_buttons'
           .login.border#register_form
             %p
+              %h1 Hello Nick
               =form_for @user, :remote => true do |f|
                 = f.label :name
                 = f.text_field :name
@@ -33,7 +34,7 @@
                 = f.label :password
                 = f.password_field :password
                 = f.label :password_confirmation, 'Password Confirmation'
-                = f.password_field :password_confimration
+                = f.password_field :password_confirmation
                 = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius form_buttons', :id => 'create_cancel')
                 = f.submit nil, :class => 'form_buttons'
     .panel_button{:style => 'display: visible;', :class => 'form_text'}
