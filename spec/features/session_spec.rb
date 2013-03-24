@@ -12,13 +12,15 @@ describe 'Session' do
     it 'displays the login form', :js => true do
       visit root_path
       click_link('Login')
+      click_link('Login Here')
       page.should have_button('Cancel')
       page.should have_button('Fly away!')
     end
     it 'clears the login form when the Cancel button is clicked', :js => true do
       visit root_path
       click_link('Login')
-      click_button('Cancel')
+      click_link('Login Here')
+      click_button('login_cancel')
       page.should_not have_button('Cancel')
       page.should_not have_button('Fly away!')
     end
@@ -27,8 +29,9 @@ describe 'Session' do
     it 'logs the user into the system if credentials are correct', :js => true do
       visit root_path
       click_link('Login')
-      fill_in('Email', :with => user.email)
-      fill_in('Password', :with => 'a')
+      click_link('Login Here')
+      fill_in('login_email', :with => user.email)
+      fill_in('login_password', :with => 'a')
       click_button('Fly away!')
       page.should_not have_link('Login')
       page.should_not have_link('Create Account')
@@ -40,8 +43,9 @@ describe 'Session' do
     it 'does not log the user into the system if credentials are incorrect', :js => true do
       visit root_path
       click_link('Login')
-      fill_in('Email', :with => user.email)
-      fill_in('Password', :with => 'b')
+      click_link('Login Here')
+      fill_in('login_email', :with => user.email)
+      fill_in('login_password', :with => 'b')
       click_button('Fly away!')
       page.should have_link('Login')
       page.should have_link('Create Account')
@@ -51,8 +55,9 @@ describe 'Session' do
     it 'logs the user out of the system', :js => true do
       visit root_path
       click_link('Login')
-      fill_in('Email', :with => user.email)
-      fill_in('Password', :with => 'a')
+      click_link('Login Here')
+      fill_in('login_email', :with => user.email)
+      fill_in('login_password', :with => 'a')
       click_button('Fly away!')
       click_link('Logout')
       page.should have_link('Login')

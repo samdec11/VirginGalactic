@@ -46,10 +46,12 @@ describe 'Flights' do
     user = User.create(name: 'admin', email: 'admin@gmail.com', password: 'a', password_confirmation: 'a', is_admin: true)
     visit root_path
     click_link('Login')
-    fill_in('Email', :with => user.email)
-    fill_in('Password', :with => 'a')
+    click_link('Login Here')
+    fill_in('login_email', :with => user.email)
+    fill_in('login_password', :with => 'a')
     click_button('Fly away!')
-    click_link('Flights')
+    page.should_not have_link('Login')
+    visit flights_path
   end
 
 end

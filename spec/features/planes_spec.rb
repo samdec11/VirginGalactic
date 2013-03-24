@@ -6,10 +6,6 @@ describe 'Planes' do
   describe '/plane' do
     it 'has a create plane button', js:true do
       login_admin
-      visit planes_path
-      visit planes_path
-      visit planes_path
-      visit planes_path
       page.should have_link('Create Plane')
     end
     it 'on click of create plane form shows GET /new' , js:true do
@@ -106,8 +102,9 @@ describe 'Planes' do
     user = User.create(name: 'admin', email: 'admin@gmail.com', password: 'a', password_confirmation: 'a', is_admin: true)
     visit root_path
     click_link('Login')
-    fill_in('Email', :with => user.email)
-    fill_in('Password', :with => 'a')
+    click_link('Login Here')
+    fill_in('login_email', :with => user.email)
+    fill_in('login_password', :with => 'a')
     click_button('Fly away!')
     page.should_not have_link('Login')
     visit planes_path

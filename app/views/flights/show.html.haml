@@ -1,12 +1,10 @@
-
 -if @flight.present?
   .flightinfo
-    .name=@flight.name
-    .org=@flight.origin
-    .des=@flight.dest
-    .date=@flight.dep_time
+  .name=@flight.name
+  .org=@flight.origin
+  .des=@flight.dest
+  .date=@flight.dep_time
   #plane
     =render partial: 'planeshow'
 -else
   Error Page Not Found. _ERROR-55
-

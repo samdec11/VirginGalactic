@@ -26,9 +26,6 @@ group :development, :test do
   gem 'annotate'
   gem 'quiet_assets'
   gem 'binding_of_caller'
-  gem 'meta_request'
-end
-
-group :development do
   gem 'better_errors'
+  gem 'meta_request'
 end
