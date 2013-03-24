@@ -33,7 +33,7 @@ describe 'Flight Show' do
     click_link('Login Here')
     fill_in('login_email', :with => user.email)
     fill_in('login_password', :with =>user.password)
-    click_button('Fly away!')
+    click_button('Blast Off!')
     visit flight_path(flight)
   end
 end
