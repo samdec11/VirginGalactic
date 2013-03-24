@@ -8,6 +8,6 @@
   = f.label :destination
   = f.text_field :dest, :placeholder => 'LGA'
   = select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name')
-  = f.submit :class => 'button radius success'
+  = f.submit :class => 'button radius'
   = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button radius secondary', :id => 'cancel_btn')
 

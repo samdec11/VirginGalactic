@@ -41,9 +41,26 @@
 {
   width: 400px;
   float: left;
+  margin-left: 0;
 }
 
 .plane
 {
-  margin-left: 400px;
+  margin-right: 200px;
+  float: right;
 }
+
+body
+{
+  background: url('jpl2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+}
+
+/*.plane_info
+{
+  position: absolute;
+}*/
