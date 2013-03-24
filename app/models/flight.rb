@@ -26,4 +26,8 @@ class Flight < ActiveRecord::Base
       end
       self.save
   end
+
+  def empty_seats
+    self.seats.where(:user_id => nil).count
+  end
 end
