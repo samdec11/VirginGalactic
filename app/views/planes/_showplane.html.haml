@@ -6,9 +6,9 @@
 -else
   .row
     .columns.large-12
-      =@plane.name
+      .pname=@plane.name
       .plane
         -@plane.rows.times do |r|
           .prow.inline
             -@plane.cols.times do |c|
-              .seat= "#{r},#{c}"
+              .seat= ""

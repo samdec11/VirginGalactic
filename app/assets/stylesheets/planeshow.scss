@@ -1,11 +1,36 @@
 .prow{
-  border: 1px black solid;
+  /*border: 1px black solid;*/
+}
+.pname{
+  color: white;
+  font-size: 2em;
+  margin: 10px;
 }
 .seat{
   width: 20px;
   height:20px;
-  border: 1px red dotted;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
+
 .inline{
   display: inline-block;
+}
+
+.seat, .empty, .filled{
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+.seat, .empty{
+  background-image: url('empty_seat.jpg');
+  cursor: pointer;
+}
+
+.filled{
+  background-image: url('filled_seat.jpg')
 }

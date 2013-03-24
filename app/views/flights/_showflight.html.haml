@@ -7,7 +7,7 @@
     %th Flight
     %th From > To
     %th Plane
-    %th Seats
+    %th Total Seats
   - @flights.each do |flight|
     %tr{:class => cycle('row0', 'row1')}
       %td= flight.dep_time
