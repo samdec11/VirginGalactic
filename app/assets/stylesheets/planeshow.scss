@@ -1,11 +1,14 @@
 .prow{
-  border: 1px black solid;
+  /*border: 1px black solid;*/
 }
 .seat{
-  width: 20px;
-  height:20px;
-  border: 1px red dotted;
+  width: 30px;
+  height:30px;
+  border: 1px black solid;
+  border-radius: 40%;
+  background-color: grey;
 }
+
 .inline{
   display: inline-block;
 }
