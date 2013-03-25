@@ -5,6 +5,8 @@
   color: white;
   font-size: 2em;
   margin: 10px;
+  margin-left: 400px;
+  margin-bottom: 25px;
 }
 .seat{
   width: 20px;
@@ -37,3 +39,32 @@
 
 .plane{
 }
+
+.select_tag
+{
+  width: 400px;
+  float: left;
+  margin-left: 0;
+}
+
+.plane
+{
+  margin-right: 200px;
+  float: right;
+}
+
+body
+{
+  background: url('jpl2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+}
+
+/*.plane_info
+{
+  position: absolute;
+}*/
+

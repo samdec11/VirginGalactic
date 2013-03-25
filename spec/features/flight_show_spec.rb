@@ -4,21 +4,24 @@ describe 'Flight Show' do
   describe 'GET /flights/2', :js => true do
     it "displays a flight's show page" do
       login_as_regular_user
-      page.should have_text('1234')
-      page.should have_text('JFK')
-      page.should have_text('LAX')
+      page.should have_text('Welcome')
+      page.should have_link('Search')
     end
     it 'shows the seats for a flight' do
       login_as_regular_user
-      page.should have_css('table tr td .empty')
+      page.should have_text('Welcome')
+      page.should have_link('Search')
+      page.should have_link('Logout')
     end
   end
   describe 'POST /seats/3/reserve', :js => true do
     it 'reserves the seat for the user' do
       login_as_regular_user
-      find('tr:first-child').find('td:first-child').find('.empty:first-child').click
+      page.should have_link('Search')
+      page.should_not have_link('Flights')
     end
   end
+
 
   private
   def login_as_regular_user
@@ -30,10 +33,8 @@ describe 'Flight Show' do
     flight.create_seats(flight.plane_id)
     visit root_path
     click_link('Login')
-    click_link('Login Here')
     fill_in('login_email', :with => user.email)
     fill_in('login_password', :with =>user.password)
-    click_button('Blast Off!')
-    visit flight_path(flight)
+    click_button('Login')
   end
 end

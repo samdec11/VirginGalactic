@@ -2,6 +2,7 @@
   $('#links').empty();
   $('#nav').empty();
   $('#nav').append('<%=j render :partial => 'layouts/nav' %>')
+  $('body').append('<%=j render :partial => 'home/video' %>')
 <% else %>
   $('#form').empty().append('<%=j render(:partial => 'form') %>');
 <% end %>

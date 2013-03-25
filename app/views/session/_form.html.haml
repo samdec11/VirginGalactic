@@ -12,29 +12,29 @@
             %p
               =form_for @user, :remote => true do |f|
                 = f.label :name
-                = f.text_field :name, :placeholder => 'Buzz'
+                = f.text_field :name, :placeholder => 'Name'
                 = f.label :email
-                = f.text_field :email, :placeholder => 'buzz@gmail.com'
+                = f.text_field :email, :id => 'reg_email', :placeholder => 'Email'
                 = f.label :password
-                = f.password_field :password, :placeholder => 'abc'
+                = f.password_field :password, :placeholder => 'Password'
                 = f.label :password_confirmation, 'Password Confirmation'
-                = f.password_field :password_confirmation, :placeholder => 'abc'
+                = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
                 / = button_to_function('Cancel', 'clear_form()', :class => 'button tiny radius form_buttons', :id => 'create_cancel')
-                = f.submit nil, :class => 'form_buttons'
+                = f.submit nil, :class => 'button radius'
           .login.border#login_form
             %p
               =form_tag '/login', :remote => true do
                 = label_tag :email
-                = text_field_tag :email, nil, :id => 'login_email', :placeholder => 'buzz@gmail.com'
+                = text_field_tag :email, nil, :id => 'login_email', :placeholder => 'Email'
                 = label_tag :password
-                = password_field_tag :password, nil, :id => 'login_password', :placeholder => 'abc'
+                = password_field_tag :password, nil, :id => 'login_password', :placeholder => 'Password'
                 / = button_to_function('Cancel', 'clear_form()', :class => 'form_buttons form_buttons', :id => 'login_cancel')
-                = submit_tag 'Login', :class => 'form_buttons'
+                = submit_tag 'Login', :class => 'button radius'
     .panel_button{:style => 'display: visible;', :class => 'form_text'}
       = image_tag 'shuttle.png', :alt => "expand"
-      / %a{:href => "#"} Login
+      %a{:href => "#", :class => 'transparent'} Login
     .panel_button#hide_button{:style => 'display: none;'}
       = image_tag 'shuttle.png', :alt => "collapse"
       / %br
-      / %a{:href => "#"} Hide
+      %a{:href => "#", :class => 'transparent'} Hide
 
