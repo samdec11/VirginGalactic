@@ -14,7 +14,7 @@
                 = f.label :name
                 = f.text_field :name, :placeholder => 'Name'
                 = f.label :email
-                = f.text_field :email, :placeholder => 'Email'
+                = f.text_field :email, :id => 'reg_email', :placeholder => 'Email'
                 = f.label :password
                 = f.password_field :password, :placeholder => 'Password'
                 = f.label :password_confirmation, 'Password Confirmation'
@@ -32,9 +32,9 @@
                 = submit_tag 'Login', :class => 'button radius'
     .panel_button{:style => 'display: visible;', :class => 'form_text'}
       = image_tag 'shuttle.png', :alt => "expand"
-      / %a{:href => "#"} Login
+      %a{:href => "#", :class => 'transparent'} Login
     .panel_button#hide_button{:style => 'display: none;'}
       = image_tag 'shuttle.png', :alt => "collapse"
       / %br
-      / %a{:href => "#"} Hide
+      %a{:href => "#", :class => 'transparent'} Hide
 
