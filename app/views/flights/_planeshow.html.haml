@@ -10,7 +10,7 @@
       %th Reserved Seats
       %th Available Seats
     %tr
-      %td= @flight.dep_time
+      %td= @flight.dep_time.strftime('%m/%d/%Y')
       %td= @flight.name
       %td= @flight.origin
       %td= @flight.dest

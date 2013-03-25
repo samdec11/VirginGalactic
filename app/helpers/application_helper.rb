@@ -5,6 +5,7 @@ module ApplicationHelper
     if @auth.present?
 
       if @auth.is_admin?
+
         nav += "<li>#{link_to('Planes', planes_path, :class => 'button radius secondary nav')}</li>"
         nav += "<li>#{link_to('Flights', flights_path, :class => 'button radius secondary nav')}</li>"
         nav += "<li>#{link_to('Logout', login_path, :method => :delete, :class => 'button radius alert')}</li>"

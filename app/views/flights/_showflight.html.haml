@@ -1,7 +1,7 @@
 / -if @flight.nil?
 /   %h3 Please Add a Flight
 / -else
-%h1 Choose Seat
+%h1 Flights
 %table#flights
   %tr
     %th Date
@@ -13,7 +13,7 @@
     %th Available Seats
   - @flights.each do |flight|
     %tr{:class => cycle('row0', 'row1')}
-      %td= flight.dep_time
+      %td= flight.dep_time.strftime('%m/%d/%Y')
       %td= link_to(flight.name, flight)
       %td= flight.origin + ' > ' + flight.dest
       %td= flight.plane.name

@@ -1,6 +1,6 @@
 $(function(){
   $('table').on('click','.empty',reserver);
-
+  $('#flight_dep_time').datepicker();
 });
 
 
