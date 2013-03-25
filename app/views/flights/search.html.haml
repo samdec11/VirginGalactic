@@ -2,7 +2,7 @@
   .large-5.columns
 
     #search
-      = button_to_function('Search', 'show_search_form()', :class => 'button tiny radius alert',id:"searchbtn")
+      = button_to_function('Search Flights', 'show_search_form()', :class => 'button radius',id:"searchbtn")
       %script
         availableTags= ["JFK","LNG"]
 
@@ -10,8 +10,8 @@
         =form_tag search_results_path, remote:true, method:'get' do
           =text_field_tag :from, nil, placeholder:"Origin",:class=> 'airports'
           =text_field_tag :to, nil, placeholder:"Destination", :class=> 'airports'
-          = button_to_function('Cancel', 'cancel_search()', :class => 'button tiny radius alert')
-          =submit_tag 'Search',:class=>"button success tiny"
+          = button_to_function('Cancel', 'cancel_search()', :class => 'button tiny radius')
+          =submit_tag 'Search',:class=>"button tiny"
 
       #results
         =render partial:'showresults'

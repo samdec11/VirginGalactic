@@ -1,12 +1,13 @@
 =form_for @flight, :remote => true do |f|
   = f.label :name
-  = f.text_field :name, :autofocus => true
+  = f.text_field :name, :autofocus => true, :placeholder => 'Buzz'
   = f.label :dep_time, 'Date'
-  = f.text_field :dep_time
+  = f.text_field :dep_time, :placeholder => 'YYYY-MM-DD'
   = f.label :origin
-  = f.text_field :origin
+  = f.text_field :origin, :placeholder => 'LAX'
   = f.label :destination
-  = f.text_field :dest
+  = f.text_field :dest, :placeholder => 'LGA'
   = select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name')
-  = f.submit :class => 'button radius success'
+  = f.submit :class => 'button radius'
   = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button radius secondary', :id => 'cancel_btn')
+
