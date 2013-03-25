@@ -8,6 +8,8 @@
     %th From > To
     %th Plane
     %th Total Seats
+    %th Seats Purchased
+    %th Available Seats
   - @flights.each do |flight|
     %tr
       %td= flight.dep_time
@@ -15,3 +17,5 @@
       %td= flight.origin + ' > ' + flight.dest
       %td= flight.plane.name
       %th= flight.seats.count
+      %th= flight.seats.count - flight.empty_seats
+      %th= flight.empty_seats
