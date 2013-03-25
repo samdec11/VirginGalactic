@@ -1,14 +1,16 @@
--if @planes.present?
-  =form_tag "something", remote:true do
-    =select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name')
--if @plane.nil?
-  %h3 Please Select A Plane
--else
-  .row
-    .columns.large-12
-      =@plane.name
-      .plane
-        -@plane.rows.times do |r|
-          .prow.inline
-            -@plane.cols.times do |c|
-              .seat= "#{r},#{c}"
+.plane_info
+  -if @planes.present?
+    =form_tag "something", remote:true do
+      =select_tag 'plane_select', options_from_collection_for_select(@planes,'id','name'), :class => 'select_tag'
+  -if @plane.nil?
+    %h3 Please Select A Plane
+  -else
+    .row
+      .columns.large-12
+        .plane_info
+          .pname=@plane.name
+          .plane
+            -@plane.rows.times do |r|
+              .prow.inline
+                -@plane.cols.times do |c|
+                  .seat= ""
